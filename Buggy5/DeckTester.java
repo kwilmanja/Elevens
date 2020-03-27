@@ -9,8 +9,8 @@ public class DeckTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
-		test1CardDeck();
 		test2CardDeck();
+		test1CardDeck();
 		testShuffle();
 		System.out.println("All tests passed!");
 	}
@@ -130,13 +130,16 @@ public class DeckTester {
 			+ " does not match deck d2 size of " + d2.size() + ".";
 
 		boolean allMatch = true;
-		while (!d1.isEmpty()) {
+		do {
 			Card c1 = d1.deal();
 			Card c2 = d2.deal();
-			if (!c1.matches(c2)) {
-				allMatch = false;
+			if (c1 != null){
+				if (!c1.matches(c2)) {
+					allMatch = false;
+				}
 			}
-		}
+		} while (!d1.isEmpty());
 		assert !allMatch : "The sequence of cards in d1 and d2 are identical.";
+
 	}
 }
