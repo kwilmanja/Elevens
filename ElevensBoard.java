@@ -200,6 +200,8 @@ public class ElevensBoard {
 	}
 
 
+	//These are private because they only need to be referenced in this local class!
+
 	/**
 	 * Deal cards to this board to start the game.
 	 */
@@ -232,4 +234,10 @@ public class ElevensBoard {
 	private boolean containsJQK(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
 	}
+
+	public static void main(String[] args){
+		ElevensBoard board = new ElevensBoard();
+		System.out.println(board.toString());
+	}
+
 }
